@@ -1,0 +1,104 @@
+20161009, full attendance
+
+proposed projects/votes:
+6 matchmaking skills in technology to geographic area from job listing site
+6 map guess
+5 draw my life
+
+4 recommending restaurants
+0 internship management
+1 chop sticks
+1 optional course app
+2 github data
+1 multiplayer music player
+3 match meetups / activities
+
+map guess wins the vote
+
+
+Views:
+register/login
+game
+  single or multiplayer (start with single player)
+  list of cities defined by us incl coordinates
+    group by continent / difficulty
+history/ score / individual ranking
+
+how the game works:
+1) user gets the name an empty map
+2) user click on the map and coordinates are compared to solution (TODO: do this on client or server 
+   score by)
+3) calculate score  (TODO: how to calculate score: time and speed)
+3.5)  show the result (show location of city, compared to your click)
+4) start at 1) for X round
+5) restart or final score 
+
+Difficult issues:
+  -scoring algorithm
+  -find a map and match with coordinates 
+    - look at open streetmap API
+    - create SVG Map and use canvas
+  -check out data storage and how to model data on GCE    
+
+Model:
+- User
+    id
+    name
+    password
+- Session (game-user)
+    Userid
+    game ID
+    score
+- Game
+    id
+    date time
+- Locations
+    id
+    name
+    long/lat
+    difficulty
+
+Use-cases
+- login just with a username
+- start a game (single player)
+- view high-scores
+
+- play
+  - choose difficulty
+  - wait for other people (multiplayer)
+  - ready! start game (maybe)
+  - receive city
+  - submit my click
+  - synchronize rounds 
+  - receive result
+
+Tasks till next Monday 17.10
+EVERYBODY
+- install GCE SDK and deploy a simple app
+- complete an angular tutorial
+- publish github username
+- look at a similar game (somebody look for a link)
+
+SPECIFIC
+- (Xin, Aytac) look for maps with coordinates
+    d3js
+    openstreemap/googlemaps
+    SVG/Picture
+
+- skeleton of the project
+   (Xuan, Andreas) angular (+packages)
+        look into it an make a proposal for the angular skeleton
+   (Lukas, Rihards) model (db)
+        define model in data store (GAE)
+
+- (Jane) scoring algorithm
+- (Rihards) define API
+
+Organizational
+- (Lukas) create repo and let everybody have write access
+- (Lukas) create trello board and add tasks
+
+LATER:
+- how to implement multiplayer
+- write up git workflow rules
+- create mock API
